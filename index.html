@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <!-- ! Tailwind config -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+         tailwind.config = {
+            theme: {
+               extend: {
+                  colors: {},
+                  fontFamily: {
+                     Lato: ["Lato", "sans-serif"],
+                  },
+               },
+            },
+         };
+      </script>
+      <script defer src="./scripts/main.js"></script>
+      <script defer src="./scripts/form-secure.js"></script>
+      <script defer src="./scripts/notify.js"></script>
+      <script defer src="./scripts/navbar.js"></script>
+      <script defer src="./scripts/dynamic-domain.js"></script>
+      <script defer src="./scripts/modals.js"></script>
+      <script defer src="scripts/range.js"></script>
+      <script defer src="scripts/flag.js"></script>
+      <script defer src="scripts/form_logic.js"></script>
+
+      <link rel="stylesheet" href="styles/notify.css" />
+      <link rel="stylesheet" href="styles/globals.css" />
+      <link rel="stylesheet" href="./styles/navbar.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+         rel="stylesheet"
+      />
+
+      <style>
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.modalbg {
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+      }
+         .bg-img {
+            background-image: url(images/sfondo-cta.jpg);
+         }
+
+         .bg-hero{
+            background-image: url(images/apertura.jpg);
+            background-repeat: no-repeat;
+
+         }
+
+         select {
+            width: 200px;
+            font-size: 14px;
+         }
+
+         select,
+         option {
+            font-size: 0.75rem;
+            padding: 0rem;
+            margin: 0;
+            font-weight: 600;
+         }
+         optgroup {
+            font-size: 10px;
+         }
+
+         .input-with-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+         }
+
+         .input-with-icon .icon {
+            position: absolute;
+            left: 10px;
+            width: 20px;
+            height: 15px;
+         }
+
+         .input-with-icon input {
+            padding-left: 35px;
+             /* Ajusta este valor según el tamaño de la imagen */
+         }
+      </style>
+
+
+
+<style>
+  
+</style>
+   </head>
+   <body class="font-Lato" >
+     
+      <main>
+
+<section>
+    <img src="images/moby-apertura.jpg" class="lg:hidden" alt="">
+</section>
+
+         <!-- ? Hero section -->
+         <section
+            id="home-section"
+            class=" lg:flex flex-col items-center hidden "
+         >
+            <div class="flex flex-col lg:flex-row w-full bg-hero">
+               <div
+                  class=" lg:h-[655px] flex flex-col gap-3 p-2 lg:p-10 lg:w-[65%]"
+               >
+                  <h1 class="text-xl md:text-5xl font-bold text-[#fee348]">
+                     Amazon Full Ai<span class="hidden lg:block">Plataforma de Trading</span>
+                  </h1>
+                  <h2 class="text-xl md:text-5xl/tight font-bold text-white">
+                     ¡PUEDES GANAR <br />
+                     hasta <span class="text-[#fee348]">1.800€</span> al mes!
+                  </h2>
+
+                  <p class="text-white text-sm md:text-3xl">
+                     Inverte en la empresa 
+                     lider que ha superado el <br />trillon de dolares.
+                  </p>
+               </div>
+
+               <div
+                  class=" flex flex-col text-white font-semibold items-center justify-start lg:p-10 lg:w-[35%]"
+               >
+                  <div
+                     class="bg-[#fe6d01] w-full flex flex-col items-center shadow-xl lg:w-[90%]"
+                  >
+                     <p class="text-center lg:text-xl p-1 xl:text-3xl">
+                        Únete a la plataforma de trading certificada invirtiendo
+                        solo $300
+                     </p>
+                     <p
+                        class="text-black text-center text-lg md:text-xl font-extrabold lg:text-white lg:font-medium xl:text-2xl"
+                     >
+                        Solicita informacion <span>GRATUITA</span>
+                     </p>
+
+                     <form
+                        id="newsletterb"
+                        action=""
+                        class="flex flex-col gap-3 bg-gray-200 rounded-lg p-3 w-full [&>input]:p-2 [&>input]:rounded-lg [&>input]:font-Lato [&>input]:font-normal  [&>div>input]:font-Lato [&>div>input]:font-normal  [&>div>input]:rounded-lg  lg:rounded-none lg:p-8"
+                     >
+                        <span class="text-center text-black text-xl font-medium xl:text-2xl"
+                           >Ingresa tus datos aqui</span
+                        >
+
+                        <input 
+                           type="text"
+                           name="name"
+                           id="name"
+                           placeholder="Nombre"
+                        />
+                        <input
+                           type="text"
+                           name="last-names"
+                           id="last_names"
+                           placeholder="Apellido"
+                        />
+                        <input
+                           type="email"
+                           name="email"
+                           id="email"
+                           placeholder="Email"
+                        />
+                        <div class="input-with-icon">
+                           <img
+                              id="country-flag"
+                              src=""
+                              class="icon"
+                              alt="phone icon"
+                           />
+                           <input
+                              title="Teléfono debe tener 10 dígitos"
+                              name="phone"
+                              id="tel"
+                              type="tel"
+                              class=" text-black p-2 rounded-md w-full "
+                              
+                           />
+                        </div>
+                        <button onclick="sendSubscribeForm('newsletterb')" type="submit"
+                           class="rounded-lg bg-green-700 p-2 text-white text-xl font-semibold"
+                        >
+                           ¡COMIENZA A GANAR AHORA!
+                        </button>
+                        <img src="images/FORM-metodi-pagamento.png" class="max-w-[400px] lg:w-full shrink self-center" alt="" />
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+
+         <!-- ? Slider section -->
+         <section id="slider-section" class="flex justify-center">
+            <div class="flex flex-col w-full">
+
+               <div
+               class="bg-[#fe6d01] w-full flex flex-col items-center shadow-xl lg:hidden"
+            >
+               <p class="text-center lg:text-xl p-1 xl:text-3xl">
+                  Únete a la plataforma de trading certificada invirtiendo
+                  solo $300
+               </p>
+               <p
+                  class="text-black text-center text-lg md:text-xl font-extrabold lg:text-white lg:font-medium xl:text-2xl"
+               >
+                  Solicita informacion <span>GRATUITA</span>
+               </p>
+
+               <form
+                  id="newsletterb"
+                  action=""
+                  class="flex flex-col gap-3 bg-gray-200 rounded-lg p-3 w-full [&>input]:p-2 [&>input]:rounded-lg [&>input]:font-Lato [&>input]:font-normal  [&>div>input]:font-Lato [&>div>input]:font-normal  [&>div>input]:rounded-lg  lg:rounded-none lg:p-8"
+               >
+                  <span class="text-center text-black text-xl font-medium xl:text-2xl"
+                     >Ingresa tus datos aqui</span
+                  >
+
+                  <input 
+                     type="text"
+                     name="name"
+                     id="name"
+                     placeholder="Nombre"
+                  />
+                  <input
+                     type="text"
+                     name="last-names"
+                     id="last_names"
+                     placeholder="Apellido"
+                  />
+                  <input
+                     type="email"
+                     name="email"
+                     id="email"
+                     placeholder="Email"
+                  />
+                  <div class="input-with-icon">
+                     <img
+                        id="country-flag2"
+                        src=""
+                        class="icon"
+                        alt="phone icon"
+                     />
+                     <input
+                        title="Teléfono debe tener 10 dígitos"
+                        name="phone"
+                        id="tel2"
+                        type="tel"
+                        class=" text-black p-2 rounded-md w-full "
+                        
+                     />
+                  </div>
+                  <a onclick="sendSubscribeForm('newsletterb')" type="submit"
+                     class="rounded-lg bg-green-700 p-2 text-white text-xl font-semibold"
+                  >
+                     ¡COMIENZA A GANAR AHORA!
+               </a>
+                  <img src="images/FORM-metodi-pagamento.png" class="max-w-[400px] lg:w-full shrink self-center" alt="" />
+               </form>
+            </div>
+               <div class="bg-orange-500 lg:p-5 xl:mb-8">
+                  <p
+                     class="text-center text-white text-2xl font-semibold lg:text-3xl xl:text-4xl"
+                  >
+                     La plataforma de ultima generacion con
+                     <span class="text-yellow-300">trading automatico</span>
+                  </p>
+               </div>
+
+               <div class="lg:flex xl:px-20">
+                <div class="flex flex-col border-2 rounded-xl shadow-xl m-5 mb-4 lg:w-1/2 overflow-hidden">
+                  <div>
+                    <h2 class="text-black flex text-center items-center justify-center text-xl font-bold md:text-5xl md:p-10 lg:text-xl xl:text-2xl ">
+                      Descubre tus posibles ganancias a corto plazo (máximo 2 meses)
+                    </h2>
+                  </div>
+              
+                  <div class="flex flex-col px-5">
+                    <label for="range" class="text-black text-xl font-bold">Selecciona la cifra</label>
+                    <input type="range" name="range" id="range" min="300" max="20000" step="50"  class="mb-2" />
+                    <span id="amount" class="text-black text-xl font-bold">300$</span>
+                  </div>
+                  <span class="bg-orange-500 text-white text-center text-2xl font-semibold py-2 ">
+                    Beneficios estimados <br />
+                    <span id="price" class="font-bold xl:text-4xl">1.568$</span>
+                  </span>
+                </div>
+              
+                <div class="flex flex-col items-center gap-2 px-4 lg:w-1/2 lg:gap-5 ">
+                  <div class="w-2/3 mt-4">
+                    <h2 class="w-50% text-black font-semibold text-center text-xl md:text-5xl lg:text-lg xl:text-2xl">
+                      ¿Por qué invertir en Amazon CFD ahora?
+                    </h2>
+                  </div>
+              
+                  <article class="flex flex-col items-start gap-5 md:items-start [&>div>p]:lg:text-base [&>div>p]:xl:text-xl">
+                    <div class="flex justify-center gap-3  items-center">
+                      <span class="bg-orange-500 rounded-full  w-8 h-8 flex justify-center items-center font-bold text-white text-xl">1</span>
+                      <p>¡Las acciones tienen un precio bajo hoy, impensable hace unos meses!</p>
+                    </div>
+                    <div class="flex justify-center gap-3 items-center">
+                      <span class="bg-orange-500 rounded-full w-8 h-8 flex justify-center items-center font-bold text-white text-xl">2</span>
+                      <p>Ha experimentado un crecimiento constante desde 1997, con un aumento de más del 1000%</p>
+                    </div>
+                    <div class="flex justify-center gap-3 items-center">
+                      <span class="bg-orange-500 rounded-full w-8 h-8 flex justify-center items-center font-bold text-white text-xl">3</span>
+                      <p>Continuamente se dirige hacia nuevas actividades, enfrentando las tendencias negativas</p>
+                    </div>
+                  </article>
+              
+                  <a  href="#home-section"  class=" text-center rounded-sm bg-green-700 p-2 w-[80%] text-white text-xl font-semibold lg:text-base">
+                    DESCUBRE CUÁNTO PUEDES GANAR
+                  </a>
+                </div>
+              </div>
+              
+            </div>
+         </section>
+
+         <!-- ? CARDS section -->
+         <section
+            id="cards-section"
+            class="flex flex-col gap-5 py-4 items-center px-10 mb-8 "
+         >
+            <div
+               class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px] my-10 justify-center"
+            >
+               <h2 class="text-3xl font-bold md:text-4xl lg:text-3xl xl:text-4xl">
+                  Beneficios
+               </h2>
+            </div>
+
+            <article
+               class="sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] xl:w-[1400px] flex flex-col items-center gap-8 [&>div>p]:text-sm md:gap-20  [&>div]:md:w-[85%] [&>div]:md:min-h-[300px] lg:flex-row lg:gap-4 [&>div>img]:lg:w-[60px] [&>div>h2]:lg:text-lg [&>div]:lg:min-h-[300px] [&>div]:lg:items-start [&>div>p]:lg:text-left [&>div>p]:lg:text-base [&>div>h2]:xl:text-xl"
+            >
+               <div
+                  class="bg-gray-200 flex flex-col gap-4 items-center justify-evenly text-center p-5"
+               >
+                  <img src="images/1_Icone-biss.png" alt="" />
+                  <h2 class="text-2xl text-[#f47919] font-semibold">
+                     Inversión inicial baja
+                  </h2>
+                  <p>
+                     El depósito inicial que la mayoría de los corredores
+                     requieren es de 300$. Este monto se utilizará para
+                     financiar las primeras operaciones de trading.
+                  </p>
+               </div>
+
+               <div
+                  class="bg-gray-200 flex flex-col gap-4 items-center justify-evenly text-center p-5"
+               >
+                  <img src="images/2_Icone-biss.png" alt="" />
+                  <h2 class="text-2xl text-[#f47919] font-semibold">
+                     Formación gratuita
+                  </h2>
+                  <p>
+                     Aprende estrategias y tácticas de trading con la ayuda de
+                     un consultor dedicado o confía en nuestro algoritmo de
+                     inteligencia artificial. También puedes comenzar con cifras
+                     modestas.
+                  </p>
+               </div>
+
+               <div
+                  class="bg-gray-200 flex flex-col gap-4 items-center justify-evenly text-center p-5"
+               >
+                  <img src="images/3_Icone-biss.png" alt="" />
+                  <h2
+                     class="text-2xl text-[#f47919] font-semibold lg:text-left"
+                  >
+                     Dinero directamente en la cuenta
+                  </h2>
+                  <p>
+                     Hemos introducido una amplia gama de métodos de pago para
+                     garantizar que puedas transferir fondos sin problemas.
+                     Muchos de nuestros sistemas de pago son instantáneos.
+                  </p>
+               </div>
+
+               <div
+                  class="bg-gray-200 flex flex-col gap-4 items-center justify-evenly text-center p-5"
+               >
+                  <img src="images/4_Icone-biss.png" alt="" />
+                  <h2 class="text-2xl text-[#f47919] font-semibold">
+                     Soporte 24/7 + seguridad
+                  </h2>
+                  <p>
+                     Se garantiza el soporte de nuestros expertos las 24 horas
+                     del día. Todos los datos se conservan rigurosamente según
+                     los altos estándares de seguridad informática.
+                  </p>
+               </div>
+            </article>
+         </section>
+
+         <!-- ? COMO FUNCIONA section -->
+         <section id="home-section" class="flex flex-col items-center">
+            <div class="flex flex-col items-center">
+               <div
+                  class="flex flex-col items-center px-5 gap-5 md:gap-8 lg:flex-row lg:w-[80%]"
+               >
+                  <div class="flex justify-center lg:w-1/2">
+                     <img
+                        src="images/comofunciona.png"
+                        class="w-2/3 lg:w-full"
+                        alt=""
+                     />
+                  </div>
+
+                  <div class="flex flex-col items-center lg:w-1/2 lg:gap-4">
+                     <h2
+                        class="text-2xl font-extrabold md:text-5xl lg:text-3xl lg:self-start xl:text-5xl"
+                     >
+                        ¿Cómo funciona?
+                     </h2>
+                     <p
+                        class="text-xl text-center md:text-balance lg:text-left lg:text-sm xl:text-xl"
+                     >
+                        <span class="font-bold">La plataforma</span> se basa en
+                        la
+                        <span class="font-bold"
+                           >inteligencia artificial y utiliza las tecnologías
+                           más avanzadas de trading en línea</span
+                        >
+                        para lograr márgenes más altos. El
+                        <span class="font-bold">software</span> proporciona
+                        información detallada y
+                        <span class="font-bold"
+                           >análisis de mercado en tiempo real</span
+                        >
+                        y permite realizar inversiones fundamentadas.
+                     </p>
+                     <a href="#home-section"
+                        class="rounded-sm bg-green-700 mb-3 text-center p-2 w-[90%] lg:w-[40%] lg:self-start text-white text-xl lg:text-sm xl:text-xl font-semibold"
+                     >
+                        DESCUBRE MÁS
+                  </a>
+                  </div>
+               </div>
+
+               <div
+                  class="bg-img flex flex-col w-full items-center lg:min-h-[200px] my-6"
+               >
+                  <h2
+                     class="text-white text-center text-3xl font-bold py-3 px-10 md:py-10"
+                  >
+                     Quien invirtio 300$ hace diez años, <br />
+                     HOY TIENE MAS DE $280.000$ en su cuenta corriente.
+                  </h2>
+                  <a href="#home-section"
+                     class="rounded-sm text-center bg-green-700 mb-3 p-2 w-[30%] text-white text-sm font-semibold"
+                  >
+                     ENTRA AHORA EN AMAZON FULL AI
+               </a>
+               </div>
+            </section>
+
+
+            <section id="faqs" class="flex justify-center">
+                <div
+                   class="flex mb-10 lg:w-[800px] xl:w-[1200px] "
+                >
+            
+                <div class="bg-[#f2f2f2] flex flex-col lg:rounded-3xl mb-5 p-4">
+                    <h2 class="text-black text-4xl lg:text-xl self-start font-bold p-4 xl:text-3xl">
+                       FAQ
+                    </h2>
+                    <!--?FAQ-->
+                    <article class="px-4 flex flex-col items-start">
+                       <!--?faqs-->
+                       <div class="">
+                          <h3 class="font-bold text-lg lg:text-base xl:text-2xl text-[#f47919]">
+                             ¿Qué es Amazon Full Ai?
+                          </h3>
+                          <p class="lg:text-sm xl:text-xl">
+                             Amazon Full Ai es una plataforma de trading en línea
+                             que ofrece alertas de oportunidades comerciales
+                             basadas en inteligencia artificial. Las alertas son
+                             generadas por algoritmos que analizan los movimientos
+                             del mercado en tiempo real, buscando patrones y
+                             correlaciones y comparándolos con datos históricos.
+                          </p>
+                       </div>
+                       <!--?faqs-->
+                       <div class="lg:text-sm ">
+                          <h3 class="font-bold text-lg lg:text-base text-[#f47919] xl:text-2xl">
+                             ¿Se necesita experiencia para comenzar a invertir en
+                             Amazon?
+                          </h3>
+                          <p  class="lg:text-sm xl:text-xl">
+                             Absolutamente no: todos pueden comenzar a invertir y
+                             ganar gracias a nuestra plataforma automática y a las
+                             herramientas de aprendizaje disponibles.
+                          </p>
+                       </div>
+                       <!--?faqs-->
+                       <div class="lg:text-sm">
+                          <h3 class="font-bold text-lg lg:text-base text-[#f47919] xl:text-2xl">
+                             ¿Cuánto tiempo debo dedicar a esta actividad?
+                          </h3>
+                          <p class="lg:text-sm xl:text-xl">
+                             Puedes decidir el tiempo que prefieras. Para las
+                             primeras operaciones, bastan aproximadamente 2 horas
+                             a la semana.
+                          </p>
+                       </div>
+                       <!--?faqs-->
+                       <div>
+                          <h3 class="font-bold text-lg lg:text-base text-[#f47919] xl:text-2xl">
+                             ¿Cuánto cuesta el acceso a la plataforma?
+                          </h3>
+                          <p class="lg:text-sm xl:text-xl">
+                             La inversión inicial requerida es mínima, con solo
+                             300$ puedes realizar las primeras operaciones de
+                             trading y comenzar a ganar.
+                          </p>
+                       </div>
+                    </article>
+  
+                    <div
+                       class="flex flex-col items-center gap-4 m-2 p-3 bg-white"
+                    >
+                       <h2
+                          class="text-[#f47919] text-center text-2xl font-bold py-3 lg:text-lg xl:text-3xl"
+                       >
+                          Flexibilidad a tu servicio.
+                       </h2>
+                       <p class="text-xl text-center lg:text-base xl:text-3xl xl:mb-4">
+                          Puedes elegir entre diferentes tipos de trading: uno
+                          completamente automático y otro manual.
+                          <span class="font-bold">
+                             La plataforma es adecuada para todos los niveles de
+                             experiencia, desde principiantes hasta traders
+                             experimentados.
+                          </span>
+                       </p>
+                       <a href="#home-section"
+                          class="rounded-sm bg-green-700 p-2 text-center w-[80%] lg:w-[50%] mb-7 text-white text-base font-semibold lg:text-sm xl:text-2xl"
+                       >
+                          ÚNETE A LA COMUNIDAD
+                     </a>
+                    </div>
+                </div>
+            </div>
+             </section>
+
+
+            
+
+            <section>
+               <div class="flex flex-col items-center mb-5 xl:mb-20">
+                  <h2
+                     class="text-black text-center text-2xl font-bold py-3 px-11 xl:text-4xl"
+                  >
+                     CÓMO NOS VALORAN
+                  </h2>
+
+                  <img src="images/rec.jpg" class="p-3 lg:w-[700px] xl:w-[900px]" alt="" />
+
+                  <a href="#home-section"
+                     class=" rounded-sm text-center bg-green-700 p-2 w-[80%] lg:w-[40%] xl:w-[25%] xl:text-xl xl:p-5 text-white font-semibold"
+                  >
+                     COMIENZA A GANAR AHORA
+               </a>
+               </div>
+            </div>
+         </section>
+
+         <section id="home-section" class="flex justify-center">
+            <div
+               class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+            ></div>
+         </section>
+      </main>
+
+      <footer id="footer">
+
+
+        <div class="flex flex-col items-center bg-[#20396d]">
+            <div class="text-white text-xs text-center p-3 w-[60%]">
+                <p class="mb-4 text-balance">
+                   El trading con CFDS puede ofrecer buenas oportunidades para
+                   invertir, sin embargo, debe saber hacerlo correctamente, es
+                   importante el asesoramiento y la formación necesaria antes de
+                   empezar a operar, tome en cuenta que el apalancamiento financiero
+                   puede ser un factor de gran riesgo en la pérdida del 100% del
+                   capital invertido. Cualquier información incluida en esta página
+                   web no constituye una oferta de servicios para clientes que
+                   residan en cualquier jurisdicción en la que dicha oferta no este
+                   autorizada.
+                   <br />
+                   VenturyFX es operado por Smart Trade Ltd, una empresa de
+                   Mauritius, autorizada y regulada por la Comisión de Servicios
+                   Financieros de Mauritius y mantiene licencias de distribuidor de
+                   Global Business & Investment con número: GB19024265. <br />
+                   Dirección registrada de Smart Trade Ltd: Premier Business Centre,
+                   piso 10, Sterling Tower, 14, calle Poudriere, Port-Lous,
+                   Mauritius. Starmove Services Ltd está constituida según las leyes
+                   de la República de Chipre, con número de registro HE 452970 y
+                   tiene su domicilio social en Andrea Kariolou, 38, 3rd Floor,
+                   Agios Athanasios, 4102, Limassol, Chipre, actúa como agente de
+                   pagos de Smart Trade Ltd.
+                </p>
+                <span>
+                   <span  class="cursor-pointer" onclick="clickModal('privacy-modal')">Privacy Policy</span>
+                   <span>-</span>
+                   <span class="cursor-pointer" onclick="clickModal('terms-modal')">Terminos y condiciones</span>
+                </span>
+             </div>
+        </div>
+        
+      </footer>
+
+      <!-- ! Modals -->
+      <!-- ? Privacy Policy Modal -->
+      <section id="privacy-modal" class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden">
+         <div class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen">
+           <div class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-54 rounded-md">
+             <div class="relative flex items-end">
+               <img
+                 class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                 onclick="clickModal('privacy-modal')"
+                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                 alt=""
+               />
+               <div class="bg-primarybg w-full">
+                 <h2 class="text-base text-center p-4 font-bold text-white w-full">
+                   Privacy Policy
+                 </h2>
+               </div>
+             </div>
+   
+             <article class="overflow-y-auto overflow overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4">
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Privacy Policy</span>
+                 <p>
+                   The [DOMINIO DINÁMICO] domain is owned and operated by [NOMBRE DINÁMICO]. This means [NOMBRE DINÁMICO] owns and is responsible for the content created by its team to develop this website. At [NOMBRE DINÁMICO], we value and respect your privacy. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit and use our website. By using our site, you agree to the practices described in this policy.
+                 </p>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Information We Collect</span>
+                 <ul class="list-disc list-inside ml-4">
+                   <li>Contact Information: Name, email address, phone number.</li>
+                   <li>Demographic Information: Preferences, interests, and other relevant information for surveys and/or offers.</li>
+                   <li>Usage Information: Data on how you use our website, including the pages you visit and the actions you take.</li>
+                 </ul>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Use of Collected Information</span>
+                 <ul class="list-disc list-inside ml-4">
+                   <li>Connecting with Hotels: We use your information to connect you with your preferred hotel casino. The selected hotel will be responsible for contacting you directly.</li>
+                   <li>Improving Our Service: Analyzing website usage to improve our services and user experience.</li>
+                   <li>Communication: Sending promotional emails about new products, special offers, or other information we think you may find interesting.</li>
+                   <li>Personalization: Customizing the website according to your interests and preferences.</li>
+                 </ul>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Sharing Information with Third Parties</span>
+                 <ul class="list-disc list-inside ml-4">
+                   <li>Hotels: We share your information only with your preferred hotel casino so they can contact you directly.</li>
+                   <li>Service Providers: We may share information with service providers who assist us in operating the website, provided that these providers agree to keep the information confidential.</li>
+                   <li>Legal Requirements: We may disclose your information when required by law or in response to legal requests from authorities.</li>
+                 </ul>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Protecting Information</span>
+                 <p>
+                   We are committed to ensuring that your information is secure. To prevent unauthorized access or disclosure, we have put in place suitable physical, electronic, and administrative procedures to safeguard and protect the information we collect online.
+                 </p>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Cookies</span>
+                 <p>
+                   Our website uses cookies to enhance your experience. A cookie is a small file that asks permission to be placed on your computer's hard drive. Once you agree, the file is added, and the cookie helps analyze web traffic or lets you know when you visit a particular site. We use cookies to identify which pages are being used. This helps us analyze data about web traffic and improve our website to tailor it to customer needs. You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website.
+                 </p>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Links to Other Websites</span>
+                 <p>
+                   Our website may contain links to other websites of interest. However, once you have used these links to leave our site, you should note that we do not have any control over those other websites. Therefore, we cannot be responsible for the protection and privacy of any information that you provide while visiting such sites, and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question.
+                 </p>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Controlling Your Personal Information</span>
+                 <p>
+                   You may choose to restrict the collection or use of your personal information in the following ways:
+                 </p>
+                 <ul class="list-disc list-inside ml-4">
+                   <li>
+                     <strong>Registration Form:</strong> Whenever you are asked to fill in a form on the website, look for the box that you can click to indicate that you do not want the information to be used by anybody for direct marketing purposes.
+                   </li>
+                   <li>
+                     <strong>Unsubscribing:</strong> If you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by writing to or emailing us at [support email address].
+                   </li>
+                 </ul>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">User Rights</span>
+                 <p>
+                   You have the right to:
+                 </p>
+                 <ul class="list-disc list-inside ml-4">
+                   <li><strong>Access:</strong> Request a copy of the information we hold about you.</li>
+                   <li><strong>Rectification:</strong> Correct any data we hold about you that is inaccurate or incomplete.</li>
+                   <li><strong>Erasure:</strong> Request that we delete your personal data, under certain conditions.</li>
+                   <li><strong>Restriction of Processing:</strong> Request that we restrict the processing of your personal data, under certain conditions.</li>
+                   <li><strong>Data Portability:</strong> Request that we transfer the data we have collected to another organization, or directly to you, under certain conditions.</li>
+                 </ul>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Responsible Gambling and Gambling Addiction Prevention</span>
+                 <p>
+                   While our platform provides exciting opportunities to explore and book hotel casinos, it is crucial to approach gambling with caution and responsibility. We do not promote or endorse compulsive gambling. If you choose to gamble, ensure that you have the financial means to do so and be prepared to accept potential losses. Gambling should be an enjoyable activity, not a source of financial distress. If you feel that gambling is becoming a problem, seek help immediately.
+                 </p>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Limited Opportunity Notice</span>
+                 <p>
+                   The offers and opportunities presented on our site are subject to availability and may be time-sensitive. We recommend taking advantage of these promotions promptly, as they may not be available indefinitely.
+                 </p>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Changes to the Privacy Policy</span>
+                 <p>
+                   [NOMBRE DINÁMICO] may update this privacy policy at any time. It is recommended to review this page periodically to stay informed of any changes. Changes will be effective immediately upon posting on this page.
+                 </p>
+               </div>
+             
+               <div class="flex flex-col gap-2">
+                 <span class="text-lg font-semibold">Contact</span>
+                 <p>
+                   If you have any questions about this Privacy Policy or if you wish to exercise any of your rights, please contact us through our contact form on the website.
+                 </p>
+               </div>
+             </article>          
+           </div>
+         </div>
+       </section>
+
+        <!-- ? Terms and Conditions Modal -->
+    <section id="terms-modal" class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden">
+      <div class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen">
+        <div class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-54 rounded-md">
+          <div class="relative flex items-end">
+            <img
+              class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+              onclick="clickModal('terms-modal')"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+              alt=""
+            />
+            <div class="bg-primarybg w-full">
+              <h2 class="text-base text-center p-4 font-bold text-white w-full">
+                Terms and Conditions
+              </h2>
+            </div>
+          </div>
+
+          <article class="overflow-y-auto overflow overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4">
+            <div class="flex flex-col gap-2">
+              <span class="text-lg font-semibold">Terms and Conditions</span>
+              <p>
+                Welcome to [DOMINIO DINÁMICO]. By using our website, you agree to comply with and be bound by the following terms and conditions of use, which, together with our privacy policy and cookie policy, govern [NOMBRE DINÁMICO]' relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.
+              </p>
+            </div>
+          
+            <div class="flex flex-col gap-2">
+              <span class="text-lg font-semibold">Definitions</span>
+              <ul class="list-disc list-inside ml-4">
+                <li>
+                  "<strong>[NOMBRE DINÁMICO]:</strong> Refers to our website and services."
+                </li>
+                <li>
+                  "<strong>User:</strong> Refers to any person who accesses and uses our website."
+                </li>
+                <li>
+                  "<strong>Hotel:</strong> Refers to the accommodation properties promoted on our website."
+                </li>
+              </ul>
+            </div>
+          
+            <div class="flex flex-col gap-2">
+              <span class="text-lg font-semibold">Intermediation Service</span>
+              <p>
+                [NOMBRE DINÁMICO] serves solely as an intermediary, facilitating contact between visitors and hotels. Our website enables users to explore a variety of casino hotels in the United Kingdom and submit their contact information so the selected hotel can communicate with them directly. [NOMBRE DINÁMICO] does not participate in the booking, provision of services, or experiences provided by the hotels.
+              </p>
+            </div>
+          
+            <div class="flex flex-col gap-2">
+              <span class="text-lg font-semibold">Limitation of Liability</span>
+              <ul class="list-disc list-inside ml-4">
+                <li>
+                  <strong>Bookings and Services:</strong> [NOMBRE DINÁMICO] is not responsible for managing bookings, the quality of services, room availability, or any other aspect of the stay at the hotels listed on our website. All negotiations and agreements are between the user and the hotel.
+                </li>
+                <li>
+                  <strong>Information:</strong> While we strive to provide accurate and up-to-date information, we do not guarantee the accuracy, completeness, or timeliness of the content on the website. Users should verify any important details directly with the hotel before making a booking.
+                </li>
+                <li>
+                  <strong>User Experiences:</strong> [NOMBRE DINÁMICO] is not responsible for the experiences users have at the hotels, including but not limited to accommodation conditions, service quality, facilities, and amenities.
+                </li>
+              </ul>
+            </div>
+          
+            <div class="flex flex-col gap-2">
+              <span class="text-lg font-semibold">Privacy and Personal Data</span>
+              <p>
+                By using our website, you agree that [NOMBRE DINÁMICO] collects and uses your personal information in accordance with our Privacy Policy. The provided data will be shared only with the selected hotel so they can contact you directly.
+              </p>
+            </div>
+          
+            <div class="flex flex-col gap-2">
+              <span class="text-lg font-semibold">Third-Party Links</span>
+              <p>
+                Our website may contain links to other websites of interest. These links are provided for your convenience and do not imply that we endorse those websites. We have no control over the content of those websites and accept no responsibility for them or for any loss or damage that may arise from your use of them.
+              </p>
+            </div>
+          
+            <div class="flex flex-col gap-2">
+              <span class="text-lg font-semibold">Changes to the Terms and Conditions</span>
+              <p>
+                [NOMBRE DINÁMICO] reserves the right to modify these terms and conditions at any time. Any changes will be effective immediately upon posting on this page. Users are encouraged to review these terms periodically to stay informed of any modifications.
+              </p>
+            </div>
+          
+            <div class="flex flex-col gap-2">
+              <span class="text-lg font-semibold">Governing Law and Jurisdiction</span>
+              <p>
+                These terms and conditions are governed by the laws of the United Kingdom. Any dispute relating to these terms and conditions will be subject to the exclusive jurisdiction of the courts of the United Kingdom.
+              </p>
+            </div>
+          
+            <div class="flex flex-col gap-2">
+              <span class="text-lg font-semibold">Contact</span>
+              <p>
+                If you have any questions about these terms and conditions, please contact us through our contact form on the website.
+              </p>
+            </div>
+          </article>          
+        </div>
+      </div>
+    </section>
+   </body>
+</html>
