@@ -26,10 +26,10 @@ document.getElementById("range").addEventListener("input", function () {
             (maxRange - midRange);
    }
 
-   price = Math.round(price).toLocaleString("de-DE");
-   let formattedAmount = Number(rangeValue).toLocaleString("de-DE");
+   price = Math.round(price).toLocaleString("en-US");
+   let formattedAmount = Number(rangeValue).toLocaleString("en-US");
 
    // Actualizar la cantidad y el precio en el DOM
-   document.getElementById("amount").innerText = `${formattedAmount}$`;
-   document.getElementById("price").innerText = `${price}$`;
+   document.getElementById("amount").innerText = `$${formattedAmount}`;
+   document.getElementById("price").innerText = `$${price}`;
 });
